@@ -1,0 +1,69 @@
+.slider {
+  swiper {
+    .all-contents {
+      display: flex;
+      justify-content: space-around;
+
+      .image {
+        border-radius: 7px;
+        width: 600px;
+      }
+
+      .text-content {
+        .name {
+          color: green;
+          font-size: 2.5rem;
+        }
+
+        .product-item-footer {
+          .origins {
+            display: flex;
+            justify-content: space-around;
+
+            span {
+              background-color: $green;
+              padding: .7rem;
+              margin: .2rem;
+              border-radius: 5px;
+              color: #fff;
+              font-size: 1.1rem;
+            }
+          }
+
+          .cook-time {
+            font-size: 2rem;
+          }
+
+
+        }
+
+        .price {
+          span {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .swiper-pagination {
+    position: relative;
+    margin-top: .5rem;
+    width: 100%;
+
+    .swiper-pagination-bullet {
+      width: 7px !important;
+      height: 7px;
+      margin-left: 2px;
+
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $green !important;
+    }
+  }
+
+
+}

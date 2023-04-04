@@ -1,0 +1,45 @@
+<div class="slider">
+  <swiper [config]="config">
+    <ng-template swiperSlide *ngFor="let food of foodsList">
+      <a routerLink="/food/{{ food.id }}" class="all-contents">
+        <img [src]="food.imageUrl" [alt]="food.name" class="image"/>
+        <div class="text-content">
+          <div class="name">
+            {{ food.name }}
+          </div>
+          <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>
+          <div class="stars">
+            <!-- <star-rating
+              [value]="food.stars"
+              [totalstars]="5"
+              checkedcolor="red"
+              uncheckedcolor="black"
+              size="22px"
+              [readonly]="true"
+            >
+            </star-rating> -->
+          </div>
+          <div class="product-item-footer">
+            <div class="origins">
+                  <span *ngFor="let origin of food.origins">
+                    {{ origin }}
+                  </span>
+            </div>
+
+            <div class="cook-time">
+              <span>🕒</span>
+              {{ food.cookTime }}
+            </div>
+          </div>
+
+          <div class="price">
+                <span>
+                   {{ food.price }}  تومان
+                </span>
+          </div>
+        </div>
+      </a>
+    </ng-template>
+  </swiper>
+  <div class="swiper-pagination"></div>
+</div>

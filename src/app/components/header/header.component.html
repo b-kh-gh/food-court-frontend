@@ -1,0 +1,72 @@
+<header>
+  <a routerLink="/" class="logo">فود کورت<i class="fa fa-utensils"></i></a>
+
+  <nav class="header-navbar">
+    <div class="dropdown">
+      <span *ngIf="isAuth; then showBlock; else loginBlock"></span>
+      <ng-template #loginBlock>
+        <span
+          class="user-name"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          routerLink="/login"
+          >ورود
+        </span>
+      </ng-template>
+
+      <ng-template #showBlock>
+        <span class="user-name" id="dropdownMenuLink" data-bs-toggle="dropdown"
+          ><a >{{ user.name }}</a>
+<!--          <a routerLink="/dashboard">{{ user.name }}</a>-->
+          <i class="fa fa-chevron-down down-arrow"></i
+        ></span>
+      </ng-template>
+
+      <ul class="dropdown-menu" *ngIf="isAuth">
+        <li><a class="dropdown-item" routerLink="/profile">پروفایل</a></li>
+        <li><a class="dropdown-item" routerLink="/orders">سفارشات</a></li>
+        <li><a class="dropdown-item" (click)="logout()">خروج</a></li>
+      </ul>
+    </div>
+
+<!--    <a routerLink="/cart-page" id="cart">-->
+<!--      سبد خرید <span>{{ cartQuantity }}</span>-->
+<!--    </a>-->
+  </nav>
+
+  <div class="icons">
+    <i class="fa fa-bars" id="bars-icon"></i>
+    <i class="fa fa-search" id="search-icon"></i>
+    <a href="#" class="fa fa-heart"></a>
+    <span class="shopping-package" routerLink="/cart-page">
+      <a   class="fa fa-cart-shopping"></a>
+      <div   class="badge bg-danger">{{ cartQuantity }}</div>
+    </span>
+  </div>
+</header>
+
+<!-- <header>
+  <div class="container-fluid">
+    <a routerLink="/" class="logo">فود کورت</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">ورود</a>
+        </li>
+        <li *ngIf="isAuth" class="menu-container">
+          <a routerLink="/dashboard">{{ user.name }}</a>
+          <div class="menu">
+            <a routerLink="/profile">پروفایل</a>
+            <a routerLink="/orders">سفارشات</a>
+            <a (click)="logout()">خروج</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span>{{ cartQuantity }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header> -->

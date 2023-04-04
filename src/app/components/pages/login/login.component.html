@@ -1,0 +1,39 @@
+<div class="container  mt-10">
+  <div class="login mt-10">
+    <app-title title="ورود"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="input-container">
+        <label for="email">ایمیل</label>
+        <div>
+          <input
+            type="email" id="email" name="email"
+            placeholder="abc@gmail.com"
+            formControlName="email"
+          />
+        </div>
+        <div class="error-list" *ngIf="fc.email.errors && isSubmited">
+          <div *ngIf="fc.email.errors.required">فیلد ایمیل خالی است</div>
+          <div *ngIf="fc.email.errors.email">فیلد ایمیل اشتباه است</div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label for="password">پسورد</label>
+        <div>
+          <input
+            type="password" id="password" name="password"
+            placeholder="********"
+            formControlName="password"
+          />
+        </div>
+        <div class="error-list" *ngIf="fc.password.errors && isSubmited">
+          <div *ngIf="fc.password.errors.required">فیلد پسورد خالی است</div>
+        </div>
+      </div>
+      <div class="button">
+        <button type="submit">ورود</button>
+      </div>
+    </form>
+  </div>
+</div>
+

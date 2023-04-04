@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    li {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid red;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100rem;
+      }
+      div {
+        padding: 1rem;
+      }
+    }
+  }
+}

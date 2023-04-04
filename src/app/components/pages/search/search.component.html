@@ -1,0 +1,10 @@
+<div>
+  <input
+    #userSearch
+    type="text"
+    placeholder="جستجوی غذای موردنظر"
+    (keyup.enter)="search(userSearch.value)"
+    [value]="searchTerm"
+  />
+  <button (click)="search(userSearch.value)">جستجو</button>
+</div>

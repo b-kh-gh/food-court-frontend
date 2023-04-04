@@ -1,0 +1,86 @@
+
+
+<app-tags></app-tags>
+<app-search></app-search> <br/><br/><br/>
+<br/>
+<app-not-found
+  [visible]="!foodsList || !foodsList.length"
+  notFoundMessage="سرچ جدید"
+></app-not-found>
+<section class="home" id="home">
+  <app-slider></app-slider>
+
+
+</section>
+
+<section class="dishes">
+
+  <h3 class="sub-heading">برخی از غذاهای ما</h3>
+  <h1 class="heading">غذاهای محبوب</h1>
+  <div class="box-container">
+    <div class="box" *ngFor="let food of foodsList">
+      <a href="#" class="fa fa-heart"></a>
+      <a href="#" class="fa fa-eye"></a>
+      <img [src]="food.imageUrl" [alt]="food.name" class="image"/>
+      <h3>{{food.name}}</h3>
+      <div class="star">
+        <star-rating
+          [value]="food.stars"
+          [totalstars]="5"
+          checkedcolor="green"
+          uncheckedcolor="black"
+          size="26px"
+          [readonly]="true"
+        >
+        </star-rating>
+      </div>
+
+      <span class="price">
+                   {{ food.price|number: '3.' }}  تومان
+                </span>
+
+      <a href="#" class="btn">اضافه به سبد خرید</a>
+    </div>
+  </div>
+  <!--    <div *ngFor="let food of foodsList">-->
+  <!--      <a routerLink="/food/{{ food.id }}" class="all-contents">-->
+  <!--        <img [src]="food.imageUrl" [alt]="food.name" class="image"/>-->
+  <!--        <div class="text-content">-->
+  <!--          <div class="name">-->
+  <!--            {{ food.name }}-->
+  <!--          </div>-->
+  <!--          <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>-->
+  <!--          <div class="stars">-->
+  <!--       -->
+  <!--          </div>-->
+  <!--          <div class="product-item-footer">-->
+  <!--            <div class="origins">-->
+  <!--                  <span *ngFor="let origin of food.origins">-->
+  <!--                    {{ origin }}-->
+  <!--                  </span>-->
+  <!--            </div>-->
+
+  <!--            <div class="cook-time">-->
+  <!--              <span>🕒</span>-->
+  <!--              {{ food.cookTime }}-->
+  <!--            </div>-->
+  <!--          </div>-->
+
+
+  <!--        </div>-->
+  <!--      </a>-->
+  <!--    </div>-->
+
+</section>
+
+
+
+{{loading$| async|json}}
+
+  <div class="loading-container" *ngIf="loading$ | async">
+    <h1>لطفا منتظر بمانید ...</h1>
+    <div> <img src="./assets/images/waiting.gif" alt=""></div>
+
+  </div>
+
+

@@ -1,0 +1,92 @@
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/woff/IRANSansWeb_Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/woff/IRANSansWeb_Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/woff/IRANSansWeb_Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/woff/IRANSansWeb_Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/fonts/woff/IRANSansWeb_UltraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/woff/IRANSansWeb.woff") format("woff");
+}
+
+@font-face {
+  font-family: yekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/iranyekanwebregular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: yekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/iranyekanwebbold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: yekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/iranyekanweblight.woff2") format("woff2");
+}
+
+[disabled] {
+  cursor: no-drop;
+}
+
+a {
+  text-decoration: none $i;
+}
+* {
+  // background-color: $bg;
+  padding: 0;
+  margin: 0;
+  font-family: "yekan";
+  direction: rtl;
+  box-sizing: border-box;
+  // transition: all 2s linear;
+  outline: none $i;text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+  // overflow-x: hidden;
+  // scroll-padding-top: 5.5rem;
+  // scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+  &:nth-child(odd) {
+    background-color: #eee;
+  }
+}
